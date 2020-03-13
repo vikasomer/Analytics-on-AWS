@@ -87,7 +87,7 @@ In this step we will create navigate to Kinesis Console & create a Kinesis Fireh
 In this step we will configure Kinesis Data Generator to produce fake data and ingest it into Kinesis Firehose
 
 * **Configure Amazon Cognito** for Kinesis Data Generator - In this step we will launch a cloud formation stack that will configure Cognito. This cloudformation scripts launches in **Oregon region** (No need to change this region)
-    * Goto : https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=Kinesis-Data-Generator-Cognito-User&templateURL=https://kinesis-data-generator-cf-template.s3-us-west-2.amazonaws.com/cognito-setup.json
+    * Goto : https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=Kinesis-Data-Generator-Cognito-User&templateURL=https://aws-kdg-tools-us-east-1.s3.amazonaws.com/cognito-setup.json
     * Click - **Next**
     * Specify Details:
         * Username - **admin**
