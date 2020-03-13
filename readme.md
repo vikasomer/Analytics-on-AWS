@@ -16,6 +16,8 @@ Contributors:
 * Use AWS Glue to automatically catalog datasets
 * Run interactive ETL scripts in an Amazon SageMaker Jupyter notebook connected to an AWS Glue development endpoint
 * Use EMR to run a Spark transformation job
+* Load data to Amazon Redshift from Glue
+* Intro into Amazon Redshift Best design practices.
 * Query data using Amazon Athena & visualize it using Amazon QuickSight
 
 # Pre-requisites:  
