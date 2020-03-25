@@ -136,7 +136,7 @@ Read more about S3 Gateway Endpoint here: https://docs.aws.amazon.com/vpc/latest
 * Leave **Policy** as default. (**Full Access**)
 * Click **Create endpoint**.
 
-*It should take a couple of seconds to provision this. Once this is ready, you should see **Status** as **available** against the newly created S3 endpoint.
+*It should take a couple of seconds to provision this. Once this is ready, you should see **Status** as **available** against the newly created S3 endpoint.*
 
 * Edit the name of the endpoint and make it **RedshiftS3EP**
 	
@@ -161,13 +161,15 @@ In this step, you will verify and add rules to the redshift security group so th
 * Click **Inbound Rules**.
 	* Click **Edit rules**
 	* Check if a self-referencing rule exists. (This should be available by default but if not add a rule as listed below)
+	
 	|Type|Source|
-	|-----|-------------|
+	|-----|-----|
 	|All Traffic|[Name of the same security group which you are editing]|
 	
 	*Note* : A self-referencing rule is required for Glue components to communicate.
 	
 	* Add **HTTPS** rule for Amazon S3 access.
+	
 	|Type|Source|
 	|-----|-------------|
 	|HTTPS|[s3-prefix-list-id]|
@@ -176,7 +178,7 @@ In this step, you will verify and add rules to the redshift security group so th
 	
 	
 	
-	*Note* : *s3-prefix-list-id* is the **S3 Endpoint** id which you took a note during S3 Endpoint creation. Just start typing **pl** in source box and the id will appear for selection.
+	*Note* : Under **Source** select Custom and type "pl" into the textbox beside it, the previously created S3 endpoint will show up and select it.
 	
 	* Click **Save rules**.
 	
@@ -233,6 +235,7 @@ In this step, we will create a Redshift Connection under Glue connection which w
 
 * GoTo : https://us-east-1.console.aws.amazon.com/redshiftv2/home?region=us-east-1#query-editor
 * Execute the following queries to create schema and tables for raw and reference data.
+* Note: Use **Dev** as database if it does not appear automatically.
 
 ```sql
 --	Create redshift_lab schema.
@@ -242,13 +245,13 @@ CREATE schema redshift_lab;
 ```sql
 --	Create f_raw_1 table.
 CREATE TABLE IF not EXISTS redshift_lab.f_raw_1 (
-  uuid					varchar(256),
+  uuid			varchar(256),
   device_ts 		timestamp,
-  device_id			int,
+  device_id		int,
   device_temp		int,
-  track_id			int,
-  activity_type	varchar(128),
-  load_time			int
+  track_id		int,
+  activity_type		varchar(128),
+  load_time		int
 );
 ```
 
@@ -343,21 +346,21 @@ Say, Data consumers mostly hit Redshift cluster with following type of queries.
 ```sql
 --Top 10 tracks and corresponding artists for a particular activity type. 
 select 
-	track_name, 
-	artist_name, 
-	count(1) frequency
+  track_name, 
+  artist_name, 
+  count(1) frequency
 from 
-	redshift_lab.f_raw_1 fr
+  redshift_lab.f_raw_1 fr
 inner join 
-	redshift_lab.d_ref_data_1 drf
+  redshift_lab.d_ref_data_1 drf
 on 
-	fr.track_id = drf.track_id
+  fr.track_id = drf.track_id
 where 
-	activity_type = 'Running'
+  activity_type = 'Running'
 group by 
-	track_name, artist_name
+  track_name, artist_name
 order by 
-	frequency desc
+  frequency desc
 limit 10;
 ```
 
@@ -471,21 +474,21 @@ Based on all above observations and stats,
 ```sql
 --fact table ddl
 CREATE TABLE IF NOT EXISTS redshift_lab.f_raw_2 (
-  uuid					varchar(40) ENCODE zstd,
+  uuid			varchar(40) ENCODE zstd,
   device_ts 		timestamp,
-  device_id			int ENCODE az64,
+  device_id		int ENCODE az64,
   device_temp		int ENCODE az64,
-  track_id			int ENCODE az64,
-  activity_type	varchar(16) ENCODE bytedict sortkey,
-  load_time			int ENCODE zstd
+  track_id		int ENCODE az64,
+  activity_type		varchar(16) ENCODE bytedict sortkey,
+  load_time		int ENCODE zstd
 )
 DISTKEY(track_id);
 
 --dimension table ddl
 CREATE TABLE IF NOT EXISTS redshift_lab.d_ref_data_2 (
   track_id		int,
-  track_name	varchar(64),
-  artist_name	varchar(64)
+  track_name		varchar(64),
+  artist_name		varchar(64)
 )
 DISTSTYLE ALL;
 ```
@@ -536,21 +539,21 @@ Re-execute the below query used by data consumers on newly created tables.
 ```sql
 --Top 10 tracks and corresponding artists for a particular activity type. 
 select 
-	track_name, 
-	artist_name, 
-	count(1) frequency
+  track_name, 
+  artist_name, 
+  count(1) frequency
 from 
-	redshift_lab.f_raw_2 fr
+  redshift_lab.f_raw_2 fr
 inner join 
-	redshift_lab.d_ref_data_2 drf
+  redshift_lab.d_ref_data_2 drf
 on 
-	fr.track_id = drf.track_id
+  fr.track_id = drf.track_id
 where 
-	activity_type = 'Running'
+  activity_type = 'Running'
 group by 
-	track_name, artist_name
+  track_name, artist_name
 order by 
-	frequency desc
+  frequency desc
 limit 10;
 ```
 
