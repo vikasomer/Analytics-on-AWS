@@ -42,7 +42,6 @@ Make sure you bring down / delete all resources created as part of this lab
 	* Stop and then Delete Notebook: **aws-glue-AnalyticsDemoNotebook**
 	
 * Delete Glue connection
-	
 	* Go to: https://us-east-1.console.aws.amazon.com/glue/home?region=us-east-1#catalog:tab=connections
 	* Select **analytics_demo**
 	* From **Actions** select **Delete Connection**
@@ -62,7 +61,6 @@ Make sure you bring down / delete all resources created as part of this lab
   * From **Actions** menu, select **Delete**. 
   * Uncheck **Create final snapshot**
   * Click **Delete**
-    *It will take around 5 mins to delete the cluster.*
 
 * Delete S3 Gateway Endpoint
   * Go to: https://console.aws.amazon.com/vpc/home?region=us-east-1#Endpoints:sort=vpcEndpointId
@@ -71,27 +69,31 @@ Make sure you bring down / delete all resources created as part of this lab
 
 * Revert Security Group rules
   * Go to: https://console.aws.amazon.com/vpc/home?region=us-east-1#SecurityGroups:sort=tag:Name
-  * Click on **Inbound Rules**
-    * Click **Edit Rules**
-    * Delete the row with S3 prefix list ID
-    * Click **Save rules**
-  * Click on **Outbound rules**
-    * Click **Edit Rules**
-    * Delete the self-referencing All TCP rule. 
-    * Click **Save rules**
+  * For the `default` security group:
+      * Click on **Inbound Rules**
+        * Click **Edit Rules**
+        * Delete the row with S3 prefix list ID
+        * Click **Save rules**
+      * Click on **Outbound rules**
+        * Click **Edit Rules**
+        * Delete the self-referencing All TCP rule. 
+        * Click **Save rules**
 
 * Delete S3 bucket
 	* Go to: https://s3.console.aws.amazon.com/s3/home?region=us-east-1
 	* Delete Bucket: **yourname-analytics-demo-bucket**
+	    * You may need to first **Empty** the bucket as prompted
+	    * Once emptied, proceed to **Delete** the bucket
 	
-* Delete Cognito Setup
-	* Go to: https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/
+* Delete the Cognito CloudFormation Stack
+	* Go to: https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/
 	* Click: **Kinesis-Data-Generator-Cognito-User**
 	* Click: **Actions** > **DeleteStack**
-	* On confirmation screen: Click: **Delete**
+	* On confirmation screen: 
+	    * Click **Delete**
 	
 * Close QuickSight account
-	* Go to: https://us-east-1.quicksight.aws.amazon.com/sn/admin#permissions
+	* Go to: https://us-east-1.quicksight.aws.amazon.com/en/admin#permissions
 	* Click: **Unsubscribe**
 	
 * Cognito Userpool
