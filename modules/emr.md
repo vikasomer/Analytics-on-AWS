@@ -97,7 +97,7 @@ In this step, we will create a EMR cluster and submit a Spark step.
     
     ![EMR Step Completion](../img/emr-step-completion.jpg)
     
-    * Once the Spark hob run is complete the EMR cluster will be terminated
+    * Once the Spark job run is complete the EMR cluster will be terminated
     * Under EMR > Cluster, you will see the Status of the cluster as **Terminated** with **All steps completed** message.
     
     ![EMR CLuster Terminated](../img/emr-cluster-terminated.jpg)
