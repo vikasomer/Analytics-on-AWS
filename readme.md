@@ -33,6 +33,7 @@ Contributors:
 Ingest and Store | [link](./modules/ingest.md)
 Catalog Data | [link](./modules/catalog.md)
 Transform Data with AWS Glue | [link](./modules/transform_glue.md)
+Transform Data with AWS Glue Studio | [link](./modules/transform_glue_studio.md)
 Transform Data with EMR | [link](./modules/emr.md)
 Analyze with Athena | [link](./modules/analyze.md)
 Visualize with Quicksight | [link](./modules/visualize.md)
