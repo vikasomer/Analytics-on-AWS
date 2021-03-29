@@ -43,7 +43,7 @@ But This time We will leverage visual graphical interface in AWS Glue Studio!
   
 ![Glue Studio](../img/glue_studio_3.png)
 
-* Repeat the step to Click - **Source** and Choose - **S3**
+* Repeat the same step and Click - **Source** and Choose - **S3**
 
 ![Glue Studio](../img/glue_studio_2.png)
 
@@ -71,7 +71,7 @@ But This time We will leverage visual graphical interface in AWS Glue Studio!
 
 ![Glue Studio](../img/glue_studio_8.png)
 
-* Click **Transform tab** in Join node Click **Add condition**
+* Click **Transform tab** in Join Node and Click **Add condition**
 
 * Use **track_id** for join columns like screenshot below.
 
@@ -85,19 +85,17 @@ But This time We will leverage visual graphical interface in AWS Glue Studio!
 
 ![Glue Studio](../img/glue_studio_11.png)
 
-* You should get the output like below screenshot
+* We will drop unused columns, and Mapping new data type for following columns:
+    * Drop Columns
+      * .track_id
+      * parition_0
+      * parition_1
+      * parition_2
+      * parition_3
+    * Mapping New Data Type  
+      * track_id **string** 
 
-![Glue Studio](../img/glue_studio_11.png)
-
-* We will drop unused columns following
-    * .track_id
-    * parition_0
-    * parition_1
-    * parition_2
-    * parition_3
-
-* We will mapping data type
-    * track_id **string** 
+* You Output should match with below screenshot    
   
 ![Glue Studio](../img/glue_studio_12.png)
 
@@ -132,6 +130,8 @@ But This time We will leverage visual graphical interface in AWS Glue Studio!
    
 ![Glue Studio](../img/glue_studio_16.png)
 
+![Glue Studio](../img/glue_studio_16_2.png)
+
 * Click **Save** and You should see "Successfully created job", You can start ETL job by Click **Run** 
    
 ![Glue Studio](../img/glue_studio_17.png)
@@ -148,7 +148,7 @@ But This time We will leverage visual graphical interface in AWS Glue Studio!
 
 ![Glue Studio](../img/glue_studio_20.png)
 
-* GoTo Glue DataCatalog: https://console.aws.amazon.com/glue/home?region=us-east-1#
+* Go To Glue DataCatalog: https://console.aws.amazon.com/glue/home?region=us-east-1#
 
 * Well Done!! You have finished Extra ETL lab with GlueStudio. With AWS Glue Studio You can visually compose data transformation workflows and seamlessly run them on AWS Glue’s Apache Spark-based serverless ETL engine.
 
