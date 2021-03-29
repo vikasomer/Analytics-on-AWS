@@ -95,6 +95,9 @@ But This time We will leverage visual graphical interface in AWS Glue Studio!
     * parition_1
     * parition_2
     * parition_3
+
+* We will mapping data type
+    * track_id **string** 
   
 ![Glue Studio](../img/glue_studio_12.png)
 
@@ -105,10 +108,6 @@ But This time We will leverage visual graphical interface in AWS Glue Studio!
 * Click **Target** and Choose **S3**
   
 ![Glue Studio](../img/glue_studio_14.png)
-
-* You should get the visual output as below screenshot
-  
-![Glue Studio](../img/glue_studio_15.png)
 
 * In Data target properties - S3 Fill up the information as below:
     * Format **Glue Parquet**
@@ -133,58 +132,32 @@ But This time We will leverage visual graphical interface in AWS Glue Studio!
    
 ![Glue Studio](../img/glue_studio_16.png)
 
-* You see "Successfully created job" then Click **Save** 
+* Click **Save** and You should see "Successfully created job", You can start ETL job by Click **Run** 
    
 ![Glue Studio](../img/glue_studio_17.png)
 
-* You should see "Successfully started job", then Click **Run Details** 
+* You should see "Successfully started job", then Click **Run Details** to Monitor your ETL job
    
 ![Glue Studio](../img/glue_studio_18.png)
 
+* You should see your ETL job Run Status "Succeeded" as below screenshot
 
-  
+![Glue Studio](../img/glue_studio_19.png)
 
-It will take close to 10 mins for the new Glue console to spin up.
+* You can see Pyspark Code that Glue studio generated, It's whitebox concept that help you to understand what's behide the scence, and you can also reuse this code for other purpose.
 
-You have to wait for this step to complete before moving to next step.
+![Glue Studio](../img/glue_studio_20.png)
 
-## Create SageMaker Notebooks (Jupyter) for Glue Dev Endpoints
+* GoTo Glue DataCatalog: https://console.aws.amazon.com/glue/home?region=us-east-1#
 
-* GoTo: https://console.aws.amazon.com/glue/home?region=us-east-1#etl:tab=notebooks
-* Select tab : **Sagemaker notebooks**
-* Click: **Create notebook**
-  * Notebook name: **notebook1**
-  * Attach to development endpoint: **devendpoint1**
-  * Choose: **Create an IAM role**
-  * IAM Role: **notebook1**
-  * VPC (optional): Leave blank
-  * Encryption key (optional): Leave blank
-  * Click: **Create Notebook**
+* Well Done!! You have finished Extra ETL lab with GlueStudio. With AWS Glue Studio You can visually compose data transformation workflows and seamlessly run them on AWS Glue’s Apache Spark-based serverless ETL engine.
 
-This will take few minutes, wait for this to finish
+* Bonus Knowledge, You can use Glue to get data from 3rd party data source from AWS Marketplace. You can click to get start from AWS Glue studio for Example **AWS Glue Connector for Google BigQuery**
 
-## Launch Jupyter Notebook
-- Download and save this file locally on your laptop : [summit-techfest-datalake-notebook.ipynb](../summit-techfest-datalake-notebook.ipynb)
-- GoTo: https://console.aws.amazon.com/glue/home?region=us-east-1#etl:tab=notebooks
-- Click - **aws-glue-notebook1**
-- Click - **Open**, This will open a new tab
-- On Sagemaker Jupyter Notebook 
-  - Click - Upload (right top part of screen)
-  - Browse and upload **summit-techfest-datalake-notebook.ipynb** which you downloaded earlier
-  - Click - **Upload** to confirm the download
-  - Click on **summit-techfest-datalake-notebook.ipynb ** to open the notebook
-  - Make sure it says **'Sparkmagic (PySpark)'** on top right part of the notebook, this is the name of the kernel Jupyter will use to execute code blocks in this notebook
+* In AWS Glue Studio Click **Marketplace**
 
+![Glue Studio](../img/glue_studio_22.png)
 
-**Follow the instructions on the notebook**
-	  - Read and understand the instructions, they explain important Glue concepts
-
-## Validate - Transformed / Processed data has arrived in S3
-
-Once the ETL script has ran successfully.
-console:https://s3.console.aws.amazon.com/s3/home?region=us-east-1
-
-* Click - **yourname-datalake-demo-bucket > data**
-* There should be a folder called **processed-data** created here > Open it & ensure that .parquet files are created in this folder.
-
+https://aws.amazon.com/blogs/big-data/migrating-data-from-google-bigquery-to-amazon-s3-using-aws-glue-custom-connectors/
+	
 > Back to [main page](../readme.md)
