@@ -77,7 +77,7 @@ But This time We will leverage visual graphical interface in AWS Glue Studio!
 
 ![Glue Studio](../img/glue_studio_9.png)
 
-* In Join node Click **Target** and Choose **ApplyMapping**
+* In Join node Click **Transform** and Choose **ApplyMapping**
 
 ![Glue Studio](../img/glue_studio_10.png)
 
@@ -85,19 +85,64 @@ But This time We will leverage visual graphical interface in AWS Glue Studio!
 
 ![Glue Studio](../img/glue_studio_11.png)
 
+* You should get the output like below screenshot
+
+![Glue Studio](../img/glue_studio_11.png)
+
+* We will drop unused columns following
+    * .track_id
+    * parition_0
+    * parition_1
+    * parition_2
+    * parition_3
+  
+![Glue Studio](../img/glue_studio_12.png)
+
+* Click **Transform - ApplyMapping** node
+  
+![Glue Studio](../img/glue_studio_13.png)
+
+* Click **Target** and Choose **S3**
+  
+![Glue Studio](../img/glue_studio_14.png)
+
+* You should get the visual output as below screenshot
+  
+![Glue Studio](../img/glue_studio_15.png)
+
+* In Data target properties - S3 Fill up the information as below:
+    * Format **Glue Parquet**
+    * Compression Type **Snappy**
+    * S3 Target Location **s3://yourname-analytics-workshop-bucket/data/processed-data2/**
+    * Data Catalog update options
+      * Choose **Create a table in the Data Catalog and on subsequent runs, update the schema and add new partitions**
+      * Database **analyticsworkshopdb**
+      * Table name **processed-data2**
+
+![Glue Studio](../img/glue_studio_15.png)
+
+* Click **Job details** and configure with following option
+   * Name **AnalyticsOnAWS-GlueStudio**
+   * IAM Role **AWSGlueServiceRoleDefault**
+   * Number of workers **2**
+   * Job bookmark **Disable**
+   * Number of retries **1**
+   * Job timeout (minutes) **10**
+   * Leave the rest as default value
+   * Click **Save**
+   
+![Glue Studio](../img/glue_studio_16.png)
+
+* You see "Successfully created job" then Click **Save** 
+   
+![Glue Studio](../img/glue_studio_17.png)
+
+* You should see "Successfully started job", then Click **Run Details** 
+   
+![Glue Studio](../img/glue_studio_18.png)
 
 
-    * IAM role - **AWSGlueServiceRoleDefault**
-    * Expand - **Security configuration.. parameters**
-      * Data processing units (DPUs): **2** (this affects the cost of the running this lab)
-  * Click - **Next**
-  * Networking screen :
-    * Choose - **Skip networking information**
-  * Add an SSH public key (Optional)
-    * Leave as defaults
-    * Click: **Next**
-  * Review the settings
-    * Click: **Finish**
+  
 
 It will take close to 10 mins for the new Glue console to spin up.
 
