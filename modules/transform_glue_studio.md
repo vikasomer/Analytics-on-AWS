@@ -18,6 +18,12 @@ Completed the previous modules
 ## What is AWS Glue Studio
 AWS Glue Studio is a new graphical interface that makes it easy to create, run, and monitor extract, transform, and load (ETL) jobs in AWS Glue. You can visually compose data transformation workflows and seamlessly run them on AWS Glue’s Apache Spark-based serverless ETL engine.
 
+In this lab, We will do the same ETL process like 
+* Transform Data with AWS Glue [link](../modules/transform_glue.md)
+
+But This time We will leverage visual graphical interface in AWS Glue Studio!
+
+---
 * GoTo : https://console.aws.amazon.com/gluestudio/home?region=us-east-1
   * Click - **Job** and Choose **Blank graph**
 
@@ -49,11 +55,35 @@ AWS Glue Studio is a new graphical interface that makes it easy to create, run, 
   
 ![Glue Studio](../img/glue_studio_4.png)
 
+* Click node either on the left, or right
 
+![Glue Studio](../img/glue_studio_5.png)
 
+* Click **Transform** and Choose **Join**
 
+![Glue Studio](../img/glue_studio_6.png)
 
+* You should get the visual diagram like screenshot below, and message on the right "Insufficient source nodes" because you need another node (Data source) to join
 
+![Glue Studio](../img/glue_studio_7.png)
+
+* Next You click on **Transform - Join** node, and On Node properties select drop downlist and tick all S3 data source like screenshot below:
+
+![Glue Studio](../img/glue_studio_8.png)
+
+* Click **Transform tab** in Join node Click **Add condition**
+
+* Use **track_id** for join columns like screenshot below.
+
+![Glue Studio](../img/glue_studio_9.png)
+
+* In Join node Click **Target** and Choose **ApplyMapping**
+
+![Glue Studio](../img/glue_studio_10.png)
+
+* You should get the output like below screenshot
+
+![Glue Studio](../img/glue_studio_11.png)
 
 
 
