@@ -6,25 +6,25 @@ Contributors:
 * Aneesh Chandra PN | Amazon Web Services | [Linkedin](https://www.linkedin.com/in/aneesh-chandra-pn/)
 * Chatchai Komrangded | Amazon Web Services | [Linkedin](https://www.linkedin.com/in/chatchaikomrangded/)
 
-![Architecture Diagram](../img/transform_glue_studio.png)
+![Architecture Diagram](../img/transform.png)
 
 # Pre-requisites:  
 Completed the previous modules   
 * Ingest and Storage [link](../modules/ingest.md)
 * Catalog Data [link](../modules/catalog.md)
 
-# Transform Data with AWS Glue Studio
+# Transform Data with AWS Glue DataBrew
 
-## What is AWS Glue Studio
-AWS Glue Studio is a new graphical interface that makes it easy to create, run, and monitor extract, transform, and load (ETL) jobs in AWS Glue. You can visually compose data transformation workflows and seamlessly run them on AWS Glue’s Apache Spark-based serverless ETL engine.
+## What is AWS Glue DataBrew
+AWS Glue DataBrew is a new visual data preparation tool that makes it easy for data analysts and data scientists to clean and normalize data to prepare it for analytics and machine learning. You can choose from over 250 pre-built transformations to automate data preparation tasks, all without the need to write any code. You can automate filtering anomalies, converting data to standard formats, and correcting invalid values, and other tasks. After your data is ready, you can immediately use it for analytics and machine learning projects. You only pay for what you use - no upfront commitment.
 
 In this lab, We will do the same ETL process like 
 * Transform Data with AWS Glue [link](../modules/transform_glue.md)
 
-But This time We will leverage visual graphical interface in AWS Glue Studio!
+But This time We will leverage visual graphical interface in AWS Glue DataBrew!
 
 ---
-* GoTo : https://console.aws.amazon.com/gluestudio/home?region=us-east-1
+* GoTo : https://console.aws.amazon.com/databrew/home?region=us-east-1#landing
   * Click - **Job** and Choose **Blank graph**
 
   * Click **Create**

@@ -4,6 +4,7 @@ Contributors:
 
 * Vikas Omer | Amazon Web Services | [Linkedin](https://www.linkedin.com/in/vikas-omer/)
 * Aneesh Chandra PN | Amazon Web Services | [Linkedin](https://www.linkedin.com/in/aneesh-chandra-pn/)
+* Chatchai Komrangded | Amazon Web Services | [Linkedin](https://www.linkedin.com/in/chatchaikomrangded/)
 
 ### Lab Architecture
 
@@ -34,6 +35,7 @@ Ingest and Store | [link](./modules/ingest.md)
 Catalog Data | [link](./modules/catalog.md)
 Transform Data with AWS Glue | [link](./modules/transform_glue.md)
 Transform Data with AWS Glue Studio | [link](./modules/transform_glue_studio.md)
+Transform Data with AWS Glue DataBrew | [link](./modules/transform_glue_databrew.md)
 Transform Data with EMR | [link](./modules/emr.md)
 Analyze with Athena | [link](./modules/analyze.md)
 Visualize with Quicksight | [link](./modules/visualize.md)
