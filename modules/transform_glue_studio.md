@@ -26,6 +26,8 @@ But This time We will leverage visual graphical interface in AWS Glue Studio!
 ---
 * GoTo : https://console.aws.amazon.com/gluestudio/home?region=us-east-1
   * Click - **Hamberger** icon in the left to expand Menu
+
+  ![Glue Studio](../img/glue_studio_0.png)
   
   * Click - **Job** and Choose **Blank graph**
 
