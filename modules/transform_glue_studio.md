@@ -25,6 +25,8 @@ But This time We will leverage visual graphical interface in AWS Glue Studio!
 
 ---
 * GoTo : https://console.aws.amazon.com/gluestudio/home?region=us-east-1
+  * Click - **Hamberger** icon in the left to expand Menu
+  
   * Click - **Job** and Choose **Blank graph**
 
   * Click **Create**
@@ -73,7 +75,7 @@ But This time We will leverage visual graphical interface in AWS Glue Studio!
 
 * Click **Transform tab** in Join Node and Click **Add condition**
 
-* Use **track_id** for join columns like screenshot below.
+* Use **track_id column** for join columns like screenshot below.
 
 ![Glue Studio](../img/glue_studio_9.png)
 
