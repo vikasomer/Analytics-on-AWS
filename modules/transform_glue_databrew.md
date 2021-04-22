@@ -30,155 +30,163 @@ Use AWS Glue DataBrew, to visual data preparation tool that makes it easy for da
 * GoTo : https://console.aws.amazon.com/databrew/home?region=us-east-1#landing
   * Click - **Create project**
 
-![Glue Studio](../img/glue_databrew_1.png)
+![Glue Databrew](../img/glue_databrew_1.png)
 
 * Enter project name - **AnalyticsOnAWS-GlueDataBrew**
 
-![Glue Studio](../img/glue_databrew_2.png)
+![Glue Databrew](../img/glue_databrew_2.png)
 
 * In Select a dataset click **New dataset**
   - In New dataset details fill in dataset name - **raw-dataset**
 
-![Glue Studio](../img/glue_databrew_3.png)
+![Glue Databrew](../img/glue_databrew_3.png)
 
 * In Connect to new dataset
   - select **All AWS Glue tables** , you should see all databases in AWS glue catalog
   
-![Glue Studio](../img/glue_databrew_4.png)
+![Glue Databrew](../img/glue_databrew_4.png)
 
 * Click **analyticsworkshopdb** 
   - choose **raw** table
 
-![Glue Studio](../img/glue_databrew_5.png)
+![Glue Databrew](../img/glue_databrew_5.png)
   
 * In Permissions
   - click **Create new IAM role** in Role name
   - Fill New IAM role suffix **AnalyticsOnAWS-GlueDataBrew**
   - click **Create project**
 
-![Glue Studio](../img/glue_databrew_6.png)
+![Glue Databrew](../img/glue_databrew_6.png)
 
 * You should able to see like in the screenshot below:
 
-![Glue Studio](../img/glue_databrew_7.png)
+![Glue Databrew](../img/glue_databrew_7.png)
 
 * Click **SCHEMA** tab to explore table schema such as column name, data type, data quality, value distribution, and box plot for numeric value for data exploration
 
-![Glue Studio](../img/glue_databrew_8.png)
+![Glue Databrew](../img/glue_databrew_8.png)
+
+* Click **#** in **track_id** column, and choose **string** 
+
+![Glue Databrew](../img/glue_databrew_8-2.png)
 
 * Click **PROFILE** tab, and click **Run data profile**
 
-![Glue Studio](../img/glue_databrew_9.png)
+![Glue Databrew](../img/glue_databrew_9.png)
   
 * Leave **Job name**, and **Job run sample** as default option
 
-![Glue Studio](../img/glue_databrew_10.png)
+![Glue Databrew](../img/glue_databrew_10.png)
 
 * Specific s3 location for job output settins to your bucket name **s3://<yourname>-analytics-workshop-bucket/**
 
-![Glue Studio](../img/glue_databrew_11.png)
+![Glue Databrew](../img/glue_databrew_11.png)
 
 * **Role name** choose the existing that you have created in previous step
 
 * Click **Create and run job**
 
-![Glue Studio](../img/glue_databrew_12.png)
+![Glue Databrew](../img/glue_databrew_12.png)
 
 * You should get similar in the screenshot below, Glue Databrew has started profiling your data
 
 * Click **GRID** tab to return to grid view
 
-![Glue Studio](../img/glue_databrew_13.png)
+![Glue Databrew](../img/glue_databrew_13.png)
 
 * Click **Join**
 
-![Glue Studio](../img/glue_databrew_14.png)
+![Glue Databrew](../img/glue_databrew_14.png)
 
-* Use **track_id** for join columns like screenshot below.
+* Click **Connect new dataset**
 
-![Glue Studio](../img/glue_studio_9.png)
+![Glue Databrew](../img/glue_databrew_15.png)
 
-* In Join node Click **Transform** and Choose **ApplyMapping**
+* Click **All AWS Glue tables**, and click **analyticsworkshopdb**
 
-![Glue Studio](../img/glue_studio_10.png)
+![Glue Databrew](../img/glue_databrew_16.png)
 
-* You should get the output like below screenshot
+* Click **reference_data**
 
-![Glue Studio](../img/glue_studio_11.png)
+* Dataset name - **reference-data-dataset**
 
-* We will drop unused columns, and Mapping new data type for following columns:
-    * Drop Columns
-      * .track_id
-      * parition_0
-      * parition_1
-      * parition_2
-      * parition_3
-    * Mapping New Data Type  
-      * track_id **string** 
+![Glue Databrew](../img/glue_databrew_17.png)
 
-* You Output should match with below screenshot    
+* You should see similar screenshot as below, click **Next**  
   
-![Glue Studio](../img/glue_studio_12.png)
+![Glue Databrew](../img/glue_databrew_18.png)
 
-* Click **Transform - ApplyMapping** node
+* Select **track_id** from **raw-dataset**
+
+* Select **track_id** from **reference-data-set**
+
+* Deselect **track_id** from **Table B**
+
+* Click **Finish**
+
+![Glue Databrew](../img/glue_databrew_19.png)
+
+* You should result like the screenshot below:
   
-![Glue Studio](../img/glue_studio_13.png)
+![Glue Databrew](../img/glue_databrew_20.png)
 
-* Click **Target** and Choose **S3**
-  
-![Glue Studio](../img/glue_studio_14.png)
+* Click **PROFILE"** to review your raw dataset profiling result such as summary, missing cells, duplicate rows, correlations, value distribution, and columns statistics, it will give you opportunities to understand more about your data
 
-* In Data target properties - S3 Fill up the information as below:
-    * Format **Glue Parquet**
-    * Compression Type **Snappy**
-    * S3 Target Location **s3://yourname-analytics-workshop-bucket/data/processed-data2/**
-    * Data Catalog update options
-      * Choose **Create a table in the Data Catalog and on subsequent runs, update the schema and add new partitions**
-      * Database **analyticsworkshopdb**
-      * Table name **processed-data2**
+![Glue Databrew](../img/glue_databrew_21.png)
 
-![Glue Studio](../img/glue_studio_15.png)
+* Click **LINEAGE** on the top right corner 
 
-* Click **Job details** and configure with following option
-   * Name **AnalyticsOnAWS-GlueStudio**
-   * IAM Role **AWSGlueServiceRoleDefault**
-   * Number of workers **2**
-   * Job bookmark **Disable**
-   * Number of retries **1**
-   * Job timeout (minutes) **10**
-   * Leave the rest as default value
-   * Click **Save**
+![Glue Databrew](../img/glue_databrew_22.png)
+
+* You should able to data lineage, which is visually map the lineage of your data to understand the various data sources and transformation steps that the data has been through
    
-![Glue Studio](../img/glue_studio_16.png)
+![Glue Databrew](../img/glue_databrew_23.png)
 
-![Glue Studio](../img/glue_studio_16_2.png)
+* Back to grid view, and click **Create Job**
 
-* Click **Save** and You should see "Successfully created job", You can start ETL job by Click **Run** 
-   
-![Glue Studio](../img/glue_studio_17.png)
+![Glue Databrew](../img/glue_databrew_24.png)
 
-* You should see "Successfully started job", then Click **Run Details** to Monitor your ETL job
-   
-![Glue Studio](../img/glue_studio_18.png)
+* Fill in follow value:
+  - In **Job details**
+    - Job name - **AnalyticsOnAWS-GlueDataBrew-Job
+  - In **Job output settings**
+    - File type - **GlueParquet**
+    - S3 location - **s3://<yourname>-analytics-workshop-bucket/data/processed-data/**
 
-* You should see your ETL job Run Status "Succeeded" as below screenshot
+![Glue Databrew](../img/glue_databrew_25.png)   
 
-![Glue Studio](../img/glue_studio_19.png)
+* * Scroll down to **Permission**, and choose role name that you have created in first step, and click **Create and run job**
 
-* You can see Pyspark Code that Glue studio generated, It's whitebox concept that help you to understand what's behide the scence, and you can also reuse this code for other purpose.
+![Glue Databrew](../img/glue_databrew_26.png)
 
-![Glue Studio](../img/glue_studio_20.png)
+* You should see 1 job in progress
 
-* Go To Glue DataCatalog: https://console.aws.amazon.com/glue/home?region=us-east-1#
+![Glue Databrew](../img/glue_databrew_27.png)
 
-* Well Done!! You have finished Extra ETL lab with GlueStudio. With AWS Glue Studio You can visually compose data transformation workflows and seamlessly run them on AWS Glue’s Apache Spark-based serverless ETL engine.
+* Cick **Jobs** on the left menu, you should see following screenshot, then click **Job name** (Hyperlink) 
 
-* Bonus Knowledge, You can use Glue to get data from 3rd party data source from AWS Marketplace. You can click to get start from AWS Glue studio for Example **AWS Glue Connector for Google BigQuery**
+ ![Glue Databrew](../img/glue_databrew_28.png)
 
-* In AWS Glue Studio Click **Marketplace**
+* Here you can explore job run history, job detail, and data lineage like in the screeshot below:
 
-![Glue Studio](../img/glue_studio_22.png)
+ ![Glue Databrew](../img/glue_databrew_29.png)
 
-https://aws.amazon.com/blogs/big-data/migrating-data-from-google-bigquery-to-amazon-s3-using-aws-glue-custom-connectors/
+ ![Glue Databrew](../img/glue_databrew_30.png)
+
+ ![Glue Databrew](../img/glue_databrew_31.png)
+
+* This job should take around 4-5 minutes to be completed, you should able to see the **Succeeded** status, and click **1 output**
+
+ ![Glue Databrew](../img/glue_databrew_32.png)
+
+* You should be able to see output destination in **Destination** Column, click hyperlink on this column
+
+ ![Glue Databrew](../img/glue_databrew_33.png)
+
+* You should see output file from Glue Databrew job!
+
+ ![Glue Databrew](../img/glue_databrew_34.png)
+
+* Well Done!! You have finished Extra ETL lab with Glue DataBrew. With AWS Glue DataBrew You can choose from over 250 pre-built transformations to automate data preparation tasks, all without the need to write any code!
 	
 > Back to [main page](../readme.md)
