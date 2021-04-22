@@ -49,7 +49,7 @@ Use AWS Glue Data Studio, a graphical interface that makes it easy to create, ru
   
 ![Glue Studio](../img/glue_studio_3.png)
 
-* Repeat the same step and click - **Source** and Choose - **S3**
+* Repeat the same step and click - **Source** and choose - **S3**
 
 ![Glue Studio](../img/glue_studio_2.png)
 
@@ -120,7 +120,7 @@ Use AWS Glue Data Studio, a graphical interface that makes it easy to create, ru
     * Compression Type **Snappy**
     * S3 Target Location **s3://yourname-analytics-workshop-bucket/data/processed-data2/**
     * Data Catalog update options
-      * Choose **Create a table in the Data Catalog and on subsequent runs, update the schema and add new partitions**
+      * choose **Create a table in the Data Catalog and on subsequent runs, update the schema and add new partitions**
       * Database **analyticsworkshopdb**
       * Table name **processed-data2**
 
