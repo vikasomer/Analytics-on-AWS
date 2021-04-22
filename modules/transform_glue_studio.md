@@ -100,7 +100,7 @@ Use AWS Glue Data Studio, a graphical interface that makes it easy to create, ru
       * parition_1
       * parition_2
       * parition_3
-    * pping New Data Type  
+    * Mapping New Data Type  
       * track_id **string** 
 
 * You output should match like in the screenshot below   
