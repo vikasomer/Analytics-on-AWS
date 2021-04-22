@@ -6,7 +6,7 @@ Contributors:
 * Aneesh Chandra PN | Amazon Web Services | [Linkedin](https://www.linkedin.com/in/aneesh-chandra-pn/)
 * Chatchai Komrangded | Amazon Web Services | [Linkedin](https://www.linkedin.com/in/chatchaikomrangded/)
 
-![Architecture Diagram](../img/transform.png)
+![Architecture Diagram](../img/glue_databrew_0.png)
 
 # Pre-requisites:  
 Completed the previous modules   
@@ -66,7 +66,9 @@ Use AWS Glue DataBrew, to visual data preparation tool that makes it easy for da
 
 ![Glue Databrew](../img/glue_databrew_8.png)
 
-* Click **#** in **track_id** column, and choose **string** 
+* Click **GRID** tab to return to grid view
+
+  * We will change track_id data type, by click **#** in **track_id** column, and choose **string** type as following screenshot
 
 ![Glue Databrew](../img/glue_databrew_8-2.png)
 
