@@ -27,7 +27,7 @@ Use AWS Glue Data Studio, a graphical interface that makes it easy to create, ru
 
 ---
 * Goto : https://console.aws.amazon.com/gluestudio/home?region=us-east-1
-  * Click - **Hamberger** icon in the left to expand menu
+  * Click - **hamberger** icon in the left to expand menu
 
   ![Glue Studio](../img/glue_studio_0.png)
   
