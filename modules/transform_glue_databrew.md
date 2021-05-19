@@ -27,7 +27,7 @@ But This time We will leverage visual graphical interface in AWS Glue DataBrew!
 Use AWS Glue DataBrew, to visual data preparation tool that makes it easy for data analysts and data scientists to clean and normalize data to prepare it for analytics and machine learning.
 
 ---
-* GoTo : https://console.aws.amazon.com/databrew/home?region=us-east-1#landing
+* Go To : https://console.aws.amazon.com/databrew/home?region=us-east-1#landing
   * Click - **Create project**
 
 ![Glue Databrew](../img/glue_databrew_1.png)
@@ -37,7 +37,7 @@ Use AWS Glue DataBrew, to visual data preparation tool that makes it easy for da
 ![Glue Databrew](../img/glue_databrew_2.png)
 
 * In Select a dataset click **New dataset**
-  - In New dataset details fill in dataset name - **raw-dataset**
+  - in New dataset details fill in dataset name - **raw-dataset**
 
 ![Glue Databrew](../img/glue_databrew_3.png)
 
@@ -53,7 +53,7 @@ Use AWS Glue DataBrew, to visual data preparation tool that makes it easy for da
   
 * In Permissions
   - click **Create new IAM role** in Role name
-  - Fill New IAM role suffix **AnalyticsOnAWS-GlueDataBrew**
+  - fill New IAM role suffix **AnalyticsOnAWS-GlueDataBrew**
   - click **Create project**
 
 ![Glue Databrew](../img/glue_databrew_6.png)

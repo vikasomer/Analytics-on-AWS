@@ -26,7 +26,7 @@ But This time We will leverage visual graphical interface in AWS Glue Studio!
 Use AWS Glue Data Studio, a graphical interface that makes it easy to create, run, and monitor extract, transform, and load (ETL) jobs in AWS Glue.
 
 ---
-* Goto : https://console.aws.amazon.com/gluestudio/home?region=us-east-1
+* Go to : https://console.aws.amazon.com/gluestudio/home?region=us-east-1
   * Click - **hamberger** icon in the left to expand menu
 
   ![Glue Studio](../img/glue_studio_0.png)
@@ -37,7 +37,7 @@ Use AWS Glue Data Studio, a graphical interface that makes it easy to create, ru
 
 ![Glue Studio](../img/glue_studio_1.png)
 
-* Click - **Source** and choose - **S3**
+* Click - **Source** and click tab Data source properties choose - **S3**
 
 ![Glue Studio](../img/glue_studio_2.png)
 
@@ -103,7 +103,7 @@ Use AWS Glue Data Studio, a graphical interface that makes it easy to create, ru
     * Mapping New Data Type  
       * track_id **string** 
 
-* You output should match like in the screenshot below   
+* Your output should match like in the screenshot below   
   
 ![Glue Studio](../img/glue_studio_12.png)
 
