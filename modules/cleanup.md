@@ -22,7 +22,7 @@ Make sure you bring down / delete all resources created as part of this lab
 * Lambda
 	* GoTo: https://console.aws.amazon.com/lambda/home?region=us-east-1
 	* Navigate to list of functions and select **top5Songs**.
-	* Under **Actions** drop down menu, select **Delete**.
+	* Under **Actions** drop down menu, select **Delete**.glue
 	
 * Glue Database
 	* GoTo: https://console.aws.amazon.com/glue/home?region=us-east-1#catalog:tab=databases
@@ -36,9 +36,32 @@ Make sure you bring down / delete all resources created as part of this lab
 	* GoTo: https://console.aws.amazon.com/glue/home?region=us-east-1#etl:tab=devEndpoints
 	* Delete endpoint: **devendpoint1**
 	* Delete endpoint: **Redshift-Lab**
+
+* Glue Studio Job
+	* GoTo: https://console.aws.amazon.com/glue/home?region=us-east-1#etl:tab=jobs
+	* Check **AnalyticsOnAWS-GlueStudio**
+	* Click **Action** and choose **Delete**
+
+* Glue DataBrew projects
+	* GoTo: https://console.aws.amazon.com/databrew/home?region=us-east-1#projects
+    * Check **AnalyticsOnAWS-GlueDataBrew**
+	* Click **Action** and choose **Delete**
+	* Check **Delete attached receipe** and click **Delete**
+
+* Glue DataBrew datasets
+	* GoTo: https://console.aws.amazon.com/databrew/home?region=us-east-1#datasets
+    * Check dataset name: **reference-data-dataset** and **raw-dataset**
+	* Click **Action** and choose **Delete**
+	* Confirm deletion by clicking **Delete**
+
+* Glue DataBrew Jobs
+	* GoTo: https://console.aws.amazon.com/databrew/home?region=us-east-1#jobs?tab=profile
+    * Check dataset name: **raw-dataset profile job**
+	* Click **Action** and choose **Delete**
+	* Confirm deletion by clicking **Delete**	
 	
 * Sagemaker Notebook
-	* You may wish you download the notebooks file locally on your laptop before deleting the notebook
+	* You may wish to download the notebooks file locally on your local machine before deleting the notebook
 	* GoTo: https://console.aws.amazon.com/glue/home?region=us-east-1#etl:tab=notebooks
 	* Stop and then Delete Notebook: **aws-glue-notebook1**
 	* Stop and then Delete Notebook: **redshfit-notebook**
