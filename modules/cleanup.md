@@ -22,7 +22,7 @@ Make sure you bring down / delete all resources created as part of this lab
 * Lambda
 	* GoTo: https://console.aws.amazon.com/lambda/home?region=us-east-1
 	* Navigate to list of functions and select **top5Songs**.
-	* Under **Actions** drop down menu, select **Delete**.
+	* Under **Actions** drop down menu, select **Delete**.glue
 	
 * Glue Database
 	* GoTo: https://console.aws.amazon.com/glue/home?region=us-east-1#catalog:tab=databases
@@ -36,6 +36,29 @@ Make sure you bring down / delete all resources created as part of this lab
 	* GoTo: https://console.aws.amazon.com/glue/home?region=us-east-1#etl:tab=devEndpoints
 	* Delete endpoint: **devendpoint1**
 	* Delete endpoint: **Redshift-Lab**
+
+* Glue Job
+	* GoTo: https://console.aws.amazon.com/glue/home?region=us-east-1#etl:tab=jobs
+	* Tick check box on: **AnalyticsOnAWS-GlueStudio**
+	* Click **Action** and choose **Delete**
+
+* Glue DataBrew projects
+	* GoTo: https://console.aws.amazon.com/databrew/home?region=us-east-1#projects
+    * Tick check box on: **AnalyticsOnAWS-GlueDataBrew**
+	* Click **Action** and choose **Delete**
+	* Tick check box on: **Delete attached receipe** and click **Delete**
+
+* Glue DataBrew datasets
+	* GoTo: https://console.aws.amazon.com/databrew/home?region=us-east-1#datasets
+    * Tick check box on dataset name: **reference-data-dataset** and **raw-dataset**
+	* Click **Action** and choose **Delete**
+	* Deletion confirmation by click **Delete**
+
+* Glue DataBrew Jobs
+	* GoTo: https://console.aws.amazon.com/databrew/home?region=us-east-1#jobs?tab=profile
+    * Tick check box on dataset name: **raw-dataset profile job**
+	* Click **Action** and choose **Delete**
+	* Deletion confirmation by click **Delete**	
 	
 * Sagemaker Notebook
 	* You may wish you download the notebooks file locally on your laptop before deleting the notebook
