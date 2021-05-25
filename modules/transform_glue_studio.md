@@ -10,7 +10,7 @@ Contributors:
 ![Architecture Diagram](../img/transform_glue_studio.png)
 
 # Pre-requisites:  
-Completed the previous modules   
+Complete the previous modules   
 * Ingest and Storage [link](../modules/ingest.md)
 * Catalog Data [link](../modules/catalog.md)
 
