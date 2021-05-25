@@ -3,7 +3,9 @@
 Contributors:
 
 * Vikas Omer | Amazon Web Services | [Linkedin](https://www.linkedin.com/in/vikas-omer/)
-* Aneesh Chandra PN | Amazon Web Services | [Linkedin](
+* Aneesh Chandra PN | Amazon Web Services | [Linkedin]
+
+* Chatchai Komrangded | Amazon Web Services | [Linkedin](https://www.linkedin.com/in/chatchaikomrangded/)
 
 https://www.linkedin.com/in/vikas-omer/)
 
