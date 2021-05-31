@@ -10,7 +10,7 @@ Contributors:
 ![Architecture Diagram](../img/glue_databrew_0.png)
 
 # Pre-requisites:  
-Completed the previous modules   
+Complete the previous modules   
 * Ingest and Storage [link](../modules/ingest.md)
 * Catalog Data [link](../modules/catalog.md)
 
@@ -19,13 +19,11 @@ Completed the previous modules
 ## What is AWS Glue DataBrew
 AWS Glue DataBrew is a new visual data preparation tool that makes it easy for data analysts and data scientists to clean and normalize data to prepare it for analytics and machine learning. You can choose from over 250 pre-built transformations to automate data preparation tasks, all without the need to write any code. You can automate filtering anomalies, converting data to standard formats, and correcting invalid values, and other tasks. After your data is ready, you can immediately use it for analytics and machine learning projects. You only pay for what you use - no upfront commitment.
 
-In this lab, We will do the same ETL process like 
-[Transform Data with AWS Glue](../modules/transform_glue.md)
-
-But This time We will leverage visual graphical interface in AWS Glue DataBrew!
+In this lab, we will do the same ETL process like 
+[Transform Data with AWS Glue](../modules/transform_glue.md) but this time we will use AWS Glue DataBrew.
 
 ## Learning outcomes from this workshop?
-Use AWS Glue DataBrew, to visual data preparation tool that makes it easy for data analysts and data scientists to clean and normalize data to prepare it for analytics and machine learning.
+Hands-on with AWS Glue DataBrew, a visual data preparation tool that makes it easy for data analysts and data scientists to clean and normalize data to prepare it for analytics and machine learning.
 
 ---
 * Go To : https://console.aws.amazon.com/databrew/home?region=us-east-1#landing
@@ -33,17 +31,17 @@ Use AWS Glue DataBrew, to visual data preparation tool that makes it easy for da
 
 ![Glue Databrew](../img/glue_databrew_1.png)
 
-* Enter project name - **AnalyticsOnAWS-GlueDataBrew**
+* Enter **Project name**: **AnalyticsOnAWS-GlueDataBrew** as shown in the screenshot below
 
 ![Glue Databrew](../img/glue_databrew_2.png)
 
-* In Select a dataset click **New dataset**
-  - in New dataset details fill in dataset name - **raw-dataset**
+* Under **Select a dataset** choose **New dataset**
+  - In New dataset details, enter **raw-dataset** as Dataset name as shown in the screenshot below.
 
 ![Glue Databrew](../img/glue_databrew_3.png)
 
-* In Connect to new dataset
-  - select **All AWS Glue tables** , you should see all databases in AWS glue catalog
+* Under **Connect to new dataset**
+  - select **All AWS Glue tables** , you should see all databases in AWS Glue Catalog as shown in the screenshot below
   
 ![Glue Databrew](../img/glue_databrew_4.png)
 
@@ -52,28 +50,29 @@ Use AWS Glue DataBrew, to visual data preparation tool that makes it easy for da
 
 ![Glue Databrew](../img/glue_databrew_5.png)
   
-* In Permissions
-  - click **Create new IAM role** in Role name
-  - fill New IAM role suffix **AnalyticsOnAWS-GlueDataBrew**
-  - click **Create project**
+* Under **Permissions**
+  - Choose **Role name** as **Create new IAM role**
+  - Enter **AnalyticsOnAWS-GlueDataBrew** in **New IAM role suffix**
+
+* Click **Create project**
 
 ![Glue Databrew](../img/glue_databrew_6.png)
 
-* You should able to see like in the screenshot below:
+* Once Glue DataBrew session is created, you should see like in the screenshot below:
 
 ![Glue Databrew](../img/glue_databrew_7.png)
 
-* Click **SCHEMA** tab to explore table schema such as column name, data type, data quality, value distribution, and box plot for numeric value for data exploration
+* Click **SCHEMA** tab on the right hand top corner of the screen to explore table schema and its properties such as column name, data type, data quality, value distribution, and box plot distribution for numeric values. 
 
 ![Glue Databrew](../img/glue_databrew_8.png)
 
 * Click **GRID** tab to return to grid view
 
-  * We will change track_id data type, by click **#** in **track_id** column, and choose **string** type as following screenshot
+  * We will change track_id data type, by click **#** in **track_id** column, and choose **string** type as shown in the following screenshot
 
 ![Glue Databrew](../img/glue_databrew_8-2.png)
 
-* Click **PROFILE** tab, and click **Run data profile**
+* Now, lets profile the data to unearth informative statistics like correlation between attributes. Click **PROFILE** tab on the right hand top corner of the screen, and click **Run data profile**
 
 ![Glue Databrew](../img/glue_databrew_9.png)
   
@@ -81,22 +80,22 @@ Use AWS Glue DataBrew, to visual data preparation tool that makes it easy for da
 
 ![Glue Databrew](../img/glue_databrew_10.png)
 
-* Specific s3 location for job output settins to your bucket name **s3://<yourname>-analytics-workshop-bucket/**
+* Specify S3 location as your bucket name **s3://\<yourname>-analytics-workshop-bucket/** for job output. Do not forget to replace <yourname> portion in the s3 path. Leave **Enable encryption for job output file** option unchecked.
 
 ![Glue Databrew](../img/glue_databrew_11.png)
 
-* **Role name** choose the existing that you have created in previous step
+* Under **Permissions**, select the role as **Role name** that was created previously in this module. 
 
 * Click **Create and run job**
 
 ![Glue Databrew](../img/glue_databrew_12.png)
 
-* You should get similar in the screenshot below, Glue Databrew has started profiling your data
-
-* Click **GRID** tab to return to grid view
+* You should get similar output as shown in the screenshot below which means that Glue Databrew has already started profiling your data
 
 ![Glue Databrew](../img/glue_databrew_13.png)
 
+* Click **GRID** tab to return to grid view
+	
 * Click **Join**
 
 ![Glue Databrew](../img/glue_databrew_14.png)
@@ -115,7 +114,7 @@ Use AWS Glue DataBrew, to visual data preparation tool that makes it easy for da
 
 ![Glue Databrew](../img/glue_databrew_17.png)
 
-* You should see similar screenshot as below, click **Next**  
+* You should see similar screen as shown in the screenshot below, click **Next**  
   
 ![Glue Databrew](../img/glue_databrew_18.png)
 
@@ -123,17 +122,17 @@ Use AWS Glue DataBrew, to visual data preparation tool that makes it easy for da
 
 * Select **track_id** from **reference-data-set**
 
-* Deselect **track_id** from **Table B**
+* Unselect **track_id** from **Table B**
 
 * Click **Finish**
 
 ![Glue Databrew](../img/glue_databrew_19.png)
 
-* You should result like the screenshot below:
+* You should see result as showin in the screenshot below:
   
 ![Glue Databrew](../img/glue_databrew_20.png)
 
-* Click **PROFILE"** to review your raw dataset profiling result such as summary, missing cells, duplicate rows, correlations, value distribution, and columns statistics, it will give you opportunities to understand more about your data
+* Click **PROFILE"** to review your raw dataset profiling result such as summary, missing cells, duplicate rows, correlations, value distribution, and columns statistics, it will give you deeper level of insights about your data
 
 ![Glue Databrew](../img/glue_databrew_21.png)
 
@@ -141,20 +140,20 @@ Use AWS Glue DataBrew, to visual data preparation tool that makes it easy for da
 
 ![Glue Databrew](../img/glue_databrew_22.png)
 
-* You should able to data lineage, which is visually map the lineage of your data to understand the various data sources and transformation steps that the data has been through
+* You should be able to see the data lineage, that is visually represented to provide understanding of data flow with involved transformation at all steps from source to sink.
    
 ![Glue Databrew](../img/glue_databrew_23.png)
 
-* Back to grid view, and click **Create Job**
+* Go back to the **GRID** view, and click **Create job**
 
 ![Glue Databrew](../img/glue_databrew_24.png)
 
-* Fill in follow value:
-  - In **Job details**
-    - Job name - **AnalyticsOnAWS-GlueDataBrew-Job
-  - In **Job output settings**
-    - File type - **GlueParquet**
-    - S3 location - **s3://<yourname>-analytics-workshop-bucket/data/processed-data/**
+* Fill in the following values:
+  - Under **Job details**
+    - Job name: **AnalyticsOnAWS-GlueDataBrew-Job
+  - Under **Job output settings**
+    - File type: **GlueParquet**
+    - S3 location: **s3://\<yourname>-analytics-workshop-bucket/data/processed-data/**
 
 ![Glue Databrew](../img/glue_databrew_25.png)   
 
@@ -178,11 +177,11 @@ Use AWS Glue DataBrew, to visual data preparation tool that makes it easy for da
 
  ![Glue Databrew](../img/glue_databrew_31.png)
 
-* This job should take around 4-5 minutes to be completed, you should able to see the **Succeeded** status, and click **1 output**
+* This job should take around 4-5 minutes to be completed, you should see **Succeeded** status, and click **1 output** under **Output** columnn.
 
  ![Glue Databrew](../img/glue_databrew_32.png)
 
-* You should be able to see output destination in **Destination** Column, click hyperlink on this column
+* You should be able to see output destination under **Destination** column, click on S3 location (hyperlink) provided in this column
 
  ![Glue Databrew](../img/glue_databrew_33.png)
 
@@ -190,6 +189,6 @@ Use AWS Glue DataBrew, to visual data preparation tool that makes it easy for da
 
  ![Glue Databrew](../img/glue_databrew_34.png)
 
-* Well Done!! You have finished Extra ETL lab with Glue DataBrew. With AWS Glue DataBrew You can choose from over 250 pre-built transformations to automate data preparation tasks, all without the need to write any code!
+* **Well Done!!** You have finished an extra ETL lab with AWS Glue DataBrew. With AWS Glue DataBrew, you can choose from over 250 pre-built transformations to automate data preparation tasks, all without the need to write any code!
 	
 > Back to [main page](../readme.md)
