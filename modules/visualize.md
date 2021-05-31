@@ -7,7 +7,7 @@ Contributors:
 
 * Chatchai Komrangded | Amazon Web Services | [Linkedin](https://www.linkedin.com/in/chatchaikomrangded/)
 
-![Architecture Diagram](../img/visualize.png)
+![Architecture Diagram](../img/visualize_quicksight.png)
 
 # Pre-requisites:  
 Completed the previous modules   

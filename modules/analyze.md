@@ -7,7 +7,7 @@ Contributors:
 
 * Chatchai Komrangded | Amazon Web Services | [Linkedin](https://www.linkedin.com/in/chatchaikomrangded/)
 
-![Architecture Diagram](../img/analyze.png)
+![Architecture Diagram](../img/analyze_athena.png)
 
 # Pre-requisites:
 Completed the previous modules   
