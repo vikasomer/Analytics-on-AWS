@@ -97,10 +97,10 @@ Use AWS Glue Data Studio, a graphical interface that makes it easy to create, ru
 * We will drop unused columns and map new data type for following columns:
     * drop Columns
       * .track_id
-      * parition_0
-      * parition_1
-      * parition_2
-      * parition_3
+      * partition_0
+      * partition_1
+      * partition_2
+      * partition_3
     * Map New Data Type  
       * track_id **string** 
 
